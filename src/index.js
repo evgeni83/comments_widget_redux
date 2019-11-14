@@ -1,12 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./containers/App";
+import { createStore } from "redux";
+import mainReducer from "./reducers/index";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let initialState = {
+  //comments: [
+  //   {
+  //     id: 0,
+  //     commentAuthor: "Tom",
+  //     commentText: "Hello!"
+  //   },
+  //   {
+  //     id: 1,
+  //     commentAuthor: "Helen",
+  //     commentText: "Hi"
+  //   },
+  //   {
+  //     id: 2,
+  //     commentAuthor: "Will",
+  //     commentText: "Yo"
+  //   }
+  // ],
+  // newCommentAuthor: "",
+  // newCommentText: ""
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+if (localStorage.hasOwnProperty("comments")) {
+  initialState = {comments: JSON.parse(localStorage.getItem("comments"))};
+}
+
+console.log(initialState);
+
+
+const store = createStore(mainReducer, initialState);
+
+ReactDOM.render(<App store={store} />, document.getElementById("root"));
