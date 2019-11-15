@@ -2,10 +2,7 @@ import React from "react";
 import style from "./commentListItem.module.css";
 
 const CommentListItem = props => {
-  const { comment, deleteComment, comments } = props;
-
-  console.log(comments);
-  
+  const { comment, deleteComment, comments } = props;  
 
   return (
     <li className={style.commentListItem}>

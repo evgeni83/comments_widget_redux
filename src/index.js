@@ -31,9 +31,6 @@ if (localStorage.hasOwnProperty("comments")) {
   initialState = {comments: JSON.parse(localStorage.getItem("comments"))};
 }
 
-console.log(initialState);
-
-
 const store = createStore(mainReducer, initialState);
 
 ReactDOM.render(<App store={store} />, document.getElementById("root"));
