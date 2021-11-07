@@ -1,36 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./containers/App";
-import { createStore } from "redux";
-import mainReducer from "./reducers/index";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import './index.css';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
-let initialState = {
-  //comments: [
-  //   {
-  //     id: 0,
-  //     commentAuthor: "Tom",
-  //     commentText: "Hello!"
-  //   },
-  //   {
-  //     id: 1,
-  //     commentAuthor: "Helen",
-  //     commentText: "Hi"
-  //   },
-  //   {
-  //     id: 2,
-  //     commentAuthor: "Will",
-  //     commentText: "Yo"
-  //   }
-  // ],
-  // newCommentAuthor: "",
-  // newCommentText: ""
-};
 
-if (localStorage.hasOwnProperty("comments")) {
-  initialState = {comments: JSON.parse(localStorage.getItem("comments"))};
-}
-
-const store = createStore(mainReducer, initialState);
-
-ReactDOM.render(<App store={store} />, document.getElementById("root"));
+ReactDOM.render(
+	<Provider store={ store }>
+		<App/>
+	</Provider>,
+	document.getElementById( 'root' )
+);

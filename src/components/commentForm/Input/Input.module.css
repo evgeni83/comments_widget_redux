@@ -1,0 +1,13 @@
+.label {
+  display: block;
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.input {
+  margin: 10px 0;
+  border: 3px solid blue;
+  border-radius: 5px;
+  padding: 5px;
+}
