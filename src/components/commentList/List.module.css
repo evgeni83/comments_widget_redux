@@ -1,0 +1,6 @@
+.list {
+  list-style-type: none;
+  flex: 1 1 50%;
+  padding: 0;
+  margin: 20px 0 0;
+}

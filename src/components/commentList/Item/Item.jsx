@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './CommentListItem.module.css';
+import classes from './Item.module.css';
 import { useDispatch } from 'react-redux';
 import { deleteCommentActionCreator } from '../../../store/reducers/commentsReducer';
 
-const CommentListItem = ( { comment } ) => {
+const Item = ( { comment } ) => {
 
 	const dispatch = useDispatch();
 
@@ -33,4 +33,4 @@ const CommentListItem = ( { comment } ) => {
 	);
 };
 
-export default CommentListItem;
+export default Item;

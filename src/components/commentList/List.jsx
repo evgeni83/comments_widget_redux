@@ -1,9 +1,9 @@
 import React from 'react';
-import CommentListItem from './CommentListItem/CommentListItem';
-import classes from './CommentList.module.css';
+import Item from './Item/Item';
+import classes from './List.module.css';
 import { useSelector } from 'react-redux';
 
-const CommentList = () => {
+const List = () => {
 
 	const comments = useSelector( state => state?.comments );
 
@@ -13,7 +13,7 @@ const CommentList = () => {
 			<ul className={ classes.list }>
 				{
 					comments.map( comment => (
-						<CommentListItem
+						<Item
 							key={ comment.id }
 							comment={ comment }
 							id={ comment.id }
@@ -26,4 +26,4 @@ const CommentList = () => {
 	);
 };
 
-export default CommentList;
+export default List;
